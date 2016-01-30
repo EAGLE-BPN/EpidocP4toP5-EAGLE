@@ -38,7 +38,7 @@
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0"
-  xmlns="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="#all">
+  xmlns="http://www.tei-c.org/ns/1.0" xmlns:t="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="#all">
 
   <xsl:output method="xml" version="1.0" encoding="UTF-8" indent="yes"/>
 
@@ -92,7 +92,7 @@
   <!-- |XX                           EXCEPTIONS                     XX| -->
   <!-- |XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX| -->
 
-  <xsl:template match="TEI.2">
+  <xsl:template match="TEI">
     <xsl:processing-instruction name="oxygen ">
       RNGSchema="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng"
       type="xml"</xsl:processing-instruction>
@@ -850,5 +850,7 @@ href="http://www.stoa.org/epidoc/schema/latest/tei-epidoc.rng" schematypens="htt
     </xsl:element>
   </xsl:template>
   
+  <xsl:template match="div[@subtype='photographs']"/>
+  <xsl:template match="div[@subtype='representations']"/>  
   
 </xsl:stylesheet>
